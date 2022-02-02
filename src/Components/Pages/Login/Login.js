@@ -5,7 +5,7 @@ import LoginStyle from './LoginStyle.css';
 const ReactCSSTG = React.addons.CSSTransitionGroup;
 
 // Main app
-class Login extends React.Component {
+class App extends React.Component {
   
   constructor(props) {
     super(props);
@@ -81,4 +81,4 @@ class ModalBack extends React.Component {
   }
 }
 
-ReactDOM.render(<Login />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'));
