@@ -1,5 +1,6 @@
 import styled from "styled-components";
 export default function Login({ type, placeholder }) {
+  
   return <StyledLogin type={type} placeholder={placeholder} />;
 }
 
@@ -27,3 +28,6 @@ const StyledLogin = styled.input`
     font-size: 1rem;
   }
 `;
+
+
+
