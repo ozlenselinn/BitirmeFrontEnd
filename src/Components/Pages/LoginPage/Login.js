@@ -1,33 +1,35 @@
-import styled from "styled-components";
-export default function Login({ type, placeholder }) {
+import React from 'react'
+import { Grid,Paper, Avatar, TextField, Button, Typography,Link } from '@material-ui/core'
+import './LoginStyle.css';
+
+const Login=()=>{
+
+    const paperStyle={padding :20,height:'70vh',width:480, margin:"20px auto"}
   
-  return <StyledLogin type={type} placeholder={placeholder} />;
+    const btnstyle={margin:'8px 0'}
+    return(
+      <div className = "loginPage">
+        <Grid>
+          <div className = "loginCard">
+            <Paper elevation={10} style={paperStyle}>
+                <Grid align='center'>
+                   <img src= 'https://cdn4.vectorstock.com/i/thumb-large/58/18/monitoring-surveillance-vector-20695818.jpg' alt ="logo" />
+                    <h2>LOSTSECURE</h2>
+                </Grid>
+                <div className='textFieldStyle'>
+                  <div className='textFieldPer'>
+                <TextField label='Kullanıcı Adı' placeholder='Kullanıcı Adı Giriniz' fullWidth required/>
+                </div>
+                <TextField label='Şifre' placeholder='Şifre Giriniz' type='password' fullWidth required/>
+                </div>
+              <div className='buttonStyle'>
+                <Button type='submit'  style={{color:'black', fontSize:'100%'}} fullWidth>Giriş</Button>
+                </div>
+            </Paper>
+            </div>
+        </Grid>
+        </div>
+    )
 }
 
-const StyledLogin = styled.input`
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  border-radius: 2rem;
-  width: 80%;
-  height: 3rem;
-  padding: 1rem;
-  border: none;
-  outline: none;
-  color: #3c354e;
-  font-size: 1rem;
-  font-weight: bold;
-  &:focus {
-    display: inline-block;
-    box-shadow: 0 0 0 0.2rem #b9abe0;
-    backdrop-filter: blur(12rem);
-    border-radius: 2rem;
-  }
-  &::placeholder {
-    color: #b9abe099;
-    font-weight: 100;
-    font-size: 1rem;
-  }
-`;
-
-
-
+export default Login;
