@@ -4,6 +4,13 @@ import dayjs from "dayjs";
 import FilterBar from "./FilterBar";
 import PersonItem from "./PersonItem";
 import { data } from "./Data";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+
+const isSameOrAfter = require("dayjs/plugin/isSameOrAfter");
+const isSameOrBefore = require("dayjs/plugin/isSameOrBefore");
+dayjs.extend(isSameOrBefore);
+dayjs.extend(isSameOrAfter);
 
 function Home() {
     const [allData, setData] = useState(data);

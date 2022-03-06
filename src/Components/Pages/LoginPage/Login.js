@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid,Paper, Avatar, TextField, Button, Typography,Link } from '@material-ui/core'
+import { Grid,Paper, TextField, Button } from '@material-ui/core'
 import './LoginStyle.css';
 
 const Login=()=>{
