@@ -11,7 +11,7 @@ function App(Component) {
     
     <div>
      <Router basename="/">
-     <Navbar/>
+  
     
     <Switch>
     

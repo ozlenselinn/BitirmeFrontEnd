@@ -30,9 +30,9 @@ function Home() {
       setData(filteredData);
     };
   
-    const handleFilterEmail = (email) => {
+    const handleFilterAge = (age) => {
       const filteredData = data.filter((item) => {
-        if (item.email.toLowerCase().includes(email.toLowerCase())) {
+        if (item.age==age) {
           return item;
         }
       });
@@ -61,19 +61,20 @@ function Home() {
     };
   
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-sm-3">
+      <div className = "homebody" >
+      <div className="container" style = {{margin:'20px', padding: '20px 20px'}}>
+        <div className="row" style = {{padding:'20px 20px'}}>
+          <div className="col-sm-3" >
             <FilterBar
               genders={generateGenderDataForDropdown()}
               onNameFilter={handleFilterName}
-              onEmailFilter={handleFilterEmail}
+              onAgeFilter={handleFilterAge}
               onGenderFilter={handleFilterGender}
               onDateFilter={handleFilterDate}
             />
           </div>
-          <div className="col-sm-9">
-            <div className="row mt-5">
+          <div className="col-sm-9" style = {{padding:'30px '}} >
+            <div className="row mt-5" style = {{margin:'20px 20px'}}>
               {allData.map((item) => (
                 <PersonItem item={item} key={item.id} />
               ))}
@@ -81,6 +82,8 @@ function Home() {
           </div>
         </div>
       </div>
+      </div>
+      
     );
   }
   

@@ -3,13 +3,13 @@ import { useState } from "react";
 const FilterBar = ({
   genders,
   onNameFilter,
-  onEmailFilter,
+  onAgeFilter,
   onGenderFilter,
   onDateFilter,
 }) => {
   const [filters, setFilters] = useState({
     name: "",
-    email: "",
+    age:"",
     gender: "",
     from: "",
     to: "",
@@ -27,8 +27,8 @@ const FilterBar = ({
       case "name":
         onNameFilter(value);
         break;
-      case "email":
-        onEmailFilter(value);
+      case "age":
+        onAgeFilter(value);
         break;
       case "gender":
         onGenderFilter(value);
@@ -46,10 +46,10 @@ const FilterBar = ({
   return (
     <div className="row my-5">
       <div className="col">
-        <h4 className="border-bottom">Filters</h4>
+        <h4 className="border-bottom">Filtrele</h4>
       </div>
-      <div className="col-sm-12 my-2">
-        <label htmlFor="name">Name</label>
+      <div className="col-sm-12 my-2" style = {{padding:'10px 0px'}}>
+        <label htmlFor="name">isim</label>
         <input
           type="text"
           className="form-control"
@@ -59,18 +59,18 @@ const FilterBar = ({
         />
       </div>
 
-      <div className="col-sm-12 my-2">
-        <label htmlFor="email">Email</label>
+      <div className="col-sm-12 my-2" style = {{padding:'10px 0px'}}>
+        <label htmlFor="age">Yaş</label>
         <input
-          type="text"
+          type="number"
           className="form-control"
-          id="email"
-          onChange={handleInput("email")}
+          id="age"
+          onChange={handleInput("age")}
         />
       </div>
 
-      <div className="col-sm-12 my-2">
-        <label htmlFor="gender">Gender</label>
+      <div className="col-sm-12 my-2" style = {{padding:'10px 0px'}}>
+        <label htmlFor="gender">Cinsiyet</label>
         <select
           className="form-control"
           id="gender"
@@ -85,8 +85,8 @@ const FilterBar = ({
         </select>
       </div>
 
-      <div className="col-sm-12 my-2">
-        <label htmlFor="startDate">From</label>
+      <div className="col-sm-12 my-2" style = {{padding:'10px 0px'}}>
+        <label htmlFor="startDate">Kayıp Tarihi</label>
         <input
           type="date"
           className="form-control"
@@ -94,7 +94,7 @@ const FilterBar = ({
           onChange={handleInput("from")}
         />
       </div>
-      <div className="col-sm-12 my-2">
+      <div className="col-sm-12 my-2" style = {{padding:'10px 0px'}}>
         <label htmlFor="endDate">To</label>
         <input
           type="date"
