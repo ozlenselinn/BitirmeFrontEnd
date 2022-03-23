@@ -7,6 +7,7 @@ import AddWantedPerson from "./Components/Pages/AddEntity/AddWantedPerson";
 import ListEmployeeComponent from "./Components/Pages/Tutorial/ListEmployeeComponent";
 import HeaderComponent from "./Components/HeaderComponent";
 import FooterComponent from "./Components/FooterComponent";
+import ListWantedPeople from "./Components/Pages/ListWantedPeople";
 import './App.css';
 
 
@@ -24,11 +25,17 @@ function App(Component) {
     <Route path="/Home" component={Home}/>
     <Route path="/AddWantedPerson" component={AddWantedPerson}/>
     
+   
+ 
     <div className="container">
-    <HeaderComponent></HeaderComponent>
+    <Switch>
     <Route path="/Tutorial" component={ListEmployeeComponent}/>
-    <FooterComponent></FooterComponent>
+    <Route path="/Employees" component={ListEmployeeComponent}/>
+    <Route path="/WantedPeopleList" component={ListWantedPeople}/>
+    </Switch>
     </div>
+  
+    
 
  
       
