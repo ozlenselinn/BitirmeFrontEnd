@@ -9,6 +9,7 @@ import HeaderComponent from "./Components/HeaderComponent";
 import FooterComponent from "./Components/FooterComponent";
 import ListWantedPeople from "./Components/Pages/ListWantedPeople";
 import './App.css';
+import CreateWantedPeopleComponent from "./Components/CreateWantedPeopleComponent";
 
 
 function App(Component) {
@@ -31,7 +32,11 @@ function App(Component) {
     <Switch>
     <Route path="/Tutorial" component={ListEmployeeComponent}/>
     <Route path="/Employees" component={ListEmployeeComponent}/>
+    <div className="container">
+      <HeaderComponent></HeaderComponent>
     <Route path="/WantedPeopleList" component={ListWantedPeople}/>
+    <Route path="/AddWantedPeople" component={CreateWantedPeopleComponent}/>
+    </div>
     </Switch>
     </div>
   

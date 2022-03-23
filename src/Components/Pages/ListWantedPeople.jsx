@@ -16,6 +16,7 @@ class ListWantedPeople extends Component {
 
         
     }
+    this.addWantedPeople=this.addWantedPeople.bind(this);
     
 }
     
@@ -24,14 +25,25 @@ class ListWantedPeople extends Component {
             this.setState({wantedPeople:res.data});
             
         });
+}
+  addWantedPeople() {
+
+    this.props.history.push('/AddWantedPeople');
 
 
 
-    }
-    render() {
+  }
+
+
+   render() {
         return (
             <div>
                 <h2 className ="text-center">Aranan Şahıs Listesi</h2>
+                <div className='row'>
+                    <button className='btn btn-primary' onClick = {this.addWantedPeople}>Kayıt Ekle</button>
+
+
+                </div>
                 <br></br>
                 <div className='row'>
                     <table className='table table-striped table-bordered'>
