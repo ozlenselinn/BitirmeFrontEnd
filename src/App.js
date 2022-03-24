@@ -10,6 +10,7 @@ import FooterComponent from "./Components/FooterComponent";
 import ListWantedPeople from "./Components/Pages/ListWantedPeople";
 import './App.css';
 import CreateWantedPeopleComponent from "./Components/CreateWantedPeopleComponent";
+import UpdateWantedPeopleComponent from "./Components/Pages/UpdateWantedPeopleComponent";
 
 
 function App(Component) {
@@ -36,6 +37,7 @@ function App(Component) {
       <HeaderComponent></HeaderComponent>
     <Route path="/WantedPeopleList" component={ListWantedPeople}/>
     <Route path="/AddWantedPeople" component={CreateWantedPeopleComponent}/>
+    <Route path="/UpdateWantedPeople/:id" component={UpdateWantedPeopleComponent}/>
     </div>
     </Switch>
     </div>

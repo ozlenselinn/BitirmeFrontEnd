@@ -13,8 +13,19 @@ class WantedPeopleService {
 
         return axios.post(WANTEDPEOPLE_API_BASE_URL, wantedPeople);
 
+    }
 
+    getWantedPeopleById(wantedPeopleId) {
 
+        return axios.get(WANTEDPEOPLE_API_BASE_URL + '/' + wantedPeopleId);
+    }
+
+    updateWantedPeople(wantedPeople, wantedPeopleId) {
+        return axios.put(WANTEDPEOPLE_API_BASE_URL + '/' + wantedPeopleId, wantedPeople);
+    }
+
+    deleteEmployee(employeeId){
+        return axios.delete(WANTEDPEOPLE_API_BASE_URL + '/' + employeeId);
     }
 
 }

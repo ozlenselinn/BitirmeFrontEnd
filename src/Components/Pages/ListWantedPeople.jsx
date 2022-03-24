@@ -13,13 +13,21 @@ class ListWantedPeople extends Component {
         this.state = {
             //initialize an array
           wantedPeople : []
-
+         
         
     }
     this.addWantedPeople=this.addWantedPeople.bind(this);
+    this.editWantedPeople=this.editWantedPeople.bind(this);
     
 }
-    
+    editWantedPeople(id) {
+        this.props.history.push(`/UpdateWantedPeople/${id}`);
+
+
+
+
+    }
+
     componentDidMount() {
         WantedPeopleService.getWantedPeople().then((res)=> {
             this.setState({wantedPeople:res.data});
@@ -58,6 +66,7 @@ class ListWantedPeople extends Component {
                                 <th>Alt Kıyafet Rengi</th>
                                 <th>Kayıp Adresi</th>
                                 <th>Şahıs Resmi</th>
+                                <th>Actions</th>
                                 
                             </tr>
                         </thead>
@@ -75,6 +84,10 @@ class ListWantedPeople extends Component {
                                         <td>{ wantedPeople.lowerClothesColor}</td>
                                         <td>{ wantedPeople.lostAddress}</td>
                                         <td>{ wantedPeople.wantedImage}</td>
+
+                                        <td>
+                                            <button onClick={ () => this.editWantedPeople(wantedPeople.id)} className="btn btn-info">Güncelle</button>
+                                        </td>
                                     </tr>
                                     
                                )    
