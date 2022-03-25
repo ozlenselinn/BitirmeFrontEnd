@@ -20,4 +20,4 @@ const PersonItem = ({ item }) => {
   );
 };
 
-export default PersonItem;
+export default PersonItem; 

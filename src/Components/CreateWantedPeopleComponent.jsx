@@ -29,6 +29,7 @@ export default class CreateWantedPeopleComponent extends Component {
       this.saveOrUpdateWantedPeople = this.saveOrUpdateWantedPeople.bind(this);
 
 } 
+
 componentDidMount(){
     if(this.state.id === '_add') {
         return

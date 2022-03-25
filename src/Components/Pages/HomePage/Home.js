@@ -4,7 +4,7 @@ import dayjs from "dayjs";
 import FilterBar from "./FilterBar";
 import PersonItem from "./PersonItem";
 import { data } from "./Data";
-import "bootstrap/dist/css/bootstrap.min.css";
+
 
 
 const isSameOrAfter = require("dayjs/plugin/isSameOrAfter");
@@ -61,11 +61,12 @@ function Home() {
     };
   
     return (
-      <div className = "homebody" >
+     
+      <div className = "homebody"  >
       <div className="container" style = {{margin:'20px', padding: '20px 20px'}}>
-        <div className="row" style = {{padding:'20px 20px'}}>
+        <div className="row" style = {{padding:'20px 20px'} }>
           <div className="col-sm-3" >
-            <FilterBar
+            <FilterBar style= {{background:'grey'}}
               genders={generateGenderDataForDropdown()}
               onNameFilter={handleFilterName}
               onAgeFilter={handleFilterAge}
@@ -73,7 +74,7 @@ function Home() {
               onDateFilter={handleFilterDate}
             />
           </div>
-          <div className="col-sm-9" style = {{padding:'30px '}} >
+          <div className="col-sm-9" style = {{padding:'30px' }} >
             <div className="row mt-5" style = {{margin:'20px 20px'}}>
               {allData.map((item) => (
                 <PersonItem item={item} key={item.id} />
@@ -83,6 +84,7 @@ function Home() {
         </div>
       </div>
       </div>
+     
       
     );
   }

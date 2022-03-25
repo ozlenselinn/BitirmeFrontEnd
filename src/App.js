@@ -3,14 +3,15 @@ import {BrowserRouter as Router,Switch, Route} from "react-router-dom";
 import Login from "./Components/Pages/LoginPage/Login";
 import Navbar from "./Components/Pages/HomePage/Navbar";
 import Home from "./Components/Pages/HomePage/Home";
-import AddWantedPerson from "./Components/Pages/AddEntity/AddWantedPerson";
-import ListEmployeeComponent from "./Components/Pages/Tutorial/ListEmployeeComponent";
+
+
 import HeaderComponent from "./Components/HeaderComponent";
 import FooterComponent from "./Components/FooterComponent";
 import ListWantedPeople from "./Components/Pages/ListWantedPeople";
 import './App.css';
 import CreateWantedPeopleComponent from "./Components/CreateWantedPeopleComponent";
 import UpdateWantedPeopleComponent from "./Components/Pages/UpdateWantedPeopleComponent";
+import ViewWantedPeopleComponent from "./Components/ViewWantedPeopleComponent";
 
 
 function App(Component) {
@@ -24,22 +25,30 @@ function App(Component) {
     <Switch>
     
     <Route path="/" exact component={Login}/>
+    <div className="container1">
+      <div className ='containerback'>
+      <Navbar></Navbar>
+      <FooterComponent></FooterComponent>
+    
     <Route path="/Home" component={Home}/>
-    <Route path="/AddWantedPerson" component={AddWantedPerson}/>
+    </div>
+    
+    
+    
     
    
- 
-    <div className="container">
-    <Switch>
-    <Route path="/Tutorial" component={ListEmployeeComponent}/>
-    <Route path="/Employees" component={ListEmployeeComponent}/>
-    <div className="container">
-      <HeaderComponent></HeaderComponent>
+  
+    <div className="container2" >
+    
+  
+      
     <Route path="/WantedPeopleList" component={ListWantedPeople}/>
     <Route path="/AddWantedPeople/:id" component={CreateWantedPeopleComponent}/>
-    {/*<Route path="/UpdateWantedPeople/:id" component={UpdateWantedPeopleComponent}/>*/}
+    <Route path="/ViewWantedPeople/:id" component={ViewWantedPeopleComponent}/>
+ 
+    
+    
     </div>
-    </Switch>
     </div>
   
     

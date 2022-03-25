@@ -49,6 +49,12 @@ class ListWantedPeople extends Component {
 
     } 
 
+    viewWantedPeople(id) {
+     
+        this.props.history.push(`/ViewWantedPeople/${id}`);
+
+    }
+
   
 
  
@@ -99,6 +105,7 @@ class ListWantedPeople extends Component {
                                         <td>
                                             <button onClick={ () => this.editWantedPeople(wantedPeople.id)} className="btn btn-info">Güncelle</button>
                                             <button style = {{margin:'10px'}}onClick={ () => this.deleteWantedPeople(wantedPeople.id)} className="btn btn-danger">Sil</button>
+                                            <button style = {{margin:'10px'}}onClick={ () => this.viewWantedPeople(wantedPeople.id)} className="btn btn-info">İncele</button>
                                         </td>
                                     </tr>
                                     

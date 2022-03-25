@@ -12,8 +12,8 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = ['Şahısları Görüntüle', 'Kayıt Ekle'];
+const settings = ['Çıkış Yap'];
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -35,8 +35,8 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
+    <AppBar position="static" style={{background:'black'}}>
+      <Container maxWidth="xl" style ={{background:'black'}}>
         <Toolbar disableGutters>
           <Typography
             variant="h6"
@@ -73,7 +73,7 @@ const Navbar = () => {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: { x: 'block', md: 'none' },
               }}
             >
               {pages.map((page) => (
@@ -94,9 +94,10 @@ const Navbar = () => {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
+                
                 key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                onClick="window.location.href='/WantedPeopleList"
+                sx={{ my: 2, color: 'grey', display: 'block' }}
               >
                 {page}
               </Button>
