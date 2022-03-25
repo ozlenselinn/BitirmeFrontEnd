@@ -36,8 +36,8 @@ function App(Component) {
     <div className="container">
       <HeaderComponent></HeaderComponent>
     <Route path="/WantedPeopleList" component={ListWantedPeople}/>
-    <Route path="/AddWantedPeople" component={CreateWantedPeopleComponent}/>
-    <Route path="/UpdateWantedPeople/:id" component={UpdateWantedPeopleComponent}/>
+    <Route path="/AddWantedPeople/:id" component={CreateWantedPeopleComponent}/>
+    {/*<Route path="/UpdateWantedPeople/:id" component={UpdateWantedPeopleComponent}/>*/}
     </div>
     </Switch>
     </div>

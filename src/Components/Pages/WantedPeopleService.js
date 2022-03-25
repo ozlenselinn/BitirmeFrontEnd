@@ -24,8 +24,8 @@ class WantedPeopleService {
         return axios.put(WANTEDPEOPLE_API_BASE_URL + '/' + wantedPeopleId, wantedPeople);
     }
 
-    deleteEmployee(employeeId){
-        return axios.delete(WANTEDPEOPLE_API_BASE_URL + '/' + employeeId);
+    deleteWantedPeople (wantedPeopleId){
+        return axios.delete(WANTEDPEOPLE_API_BASE_URL + '/' + wantedPeopleId);
     }
 
 }

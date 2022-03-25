@@ -6,6 +6,7 @@ export default class CreateWantedPeopleComponent extends Component {
       super(props)
 
       this.state = {
+          id: this.props.match.params.id,
           firstName: '',
           lastName: '',
           gender: '',
@@ -14,9 +15,9 @@ export default class CreateWantedPeopleComponent extends Component {
           lowerClothesColor:'',
           lostAddress:'',
           wantedImage:''
+        }
        
 
-      }
       this.changeFirstNameHandler = this.changeFirstNameHandler.bind(this);
       this.changeLastNameHandler = this.changeLastNameHandler.bind(this);
       this.changeGenderHandler = this.changeGenderHandler.bind(this);
@@ -25,24 +26,51 @@ export default class CreateWantedPeopleComponent extends Component {
       this.changeLowClothesHandler = this.changeLowClothesHandler.bind(this);
       this.changeLostAdHandler = this.changeLostAdHandler.bind(this);
       this.changeImageHandler = this.changeImageHandler.bind(this);
-      this.saveWantedPeople = this.saveWantedPeople.bind(this);
+      this.saveOrUpdateWantedPeople = this.saveOrUpdateWantedPeople.bind(this);
 
+} 
+componentDidMount(){
+    if(this.state.id === '_add') {
+        return
+    }else{
+
+      WantedPeopleService.getWantedPeopleById(this.state.id).then( (res) =>{
+        let wantedPeople = res.data;
+        this.setState({firstName: wantedPeople.firstName,
+            lastName: wantedPeople.lastName,
+            gender : wantedPeople.gender,
+            age: wantedPeople.age,
+            upperClothesColor: wantedPeople.upperClothesColor,
+            lowerClothesColor:wantedPeople.lowerClothesColor,
+            lostAddress: wantedPeople.lostAddress,
+            wantedImage: wantedPeople.wantedImage
+
+
+
+
+        });
+    });
+  }
 }
 
-
-  saveWantedPeople = (e) => {
+   saveOrUpdateWantedPeople = (e) => {
       e.preventDefault();
       let wantedPeople = {firstName: this.state.firstName, lastName:this.state.lastName, gender: this.state.gender, age: this.state.age, 
         upperClothesColor: this.state.upperClothesColor, lowerClothesColor: this.state.lowerClothesColor, lostAddress: this.state.lostAddress,
         wantedImage: this.state.wantedImage};
         console.log('wantedPeople =>' + JSON.stringify(wantedPeople));
 
-        WantedPeopleService.createWantedPeople(wantedPeople).then(res => {
-            this.props.history.push('/WantedPeopleList');
-        });
-
-
-
+        if(this.state.id === '_add') {
+            WantedPeopleService.createWantedPeople(wantedPeople).then(res => {
+                this.props.history.push('/WantedPeopleList');
+            });
+            
+        }else{
+            WantedPeopleService.updateWantedPeople(wantedPeople, this.state.id).then( res => {
+                this.props.history.push('/WantedPeopleList');
+            });
+        
+        }
   } 
   
   changeFirstNameHandler = (event) => {
@@ -85,9 +113,15 @@ export default class CreateWantedPeopleComponent extends Component {
 
   }
 
+getTitle() {
 
+    if(this.state.id === '_add'){
+    return <h3 className='text-center'>Kayıt Ekle</h3>
+}else {
+   return  <h3 className='text-center'>Kayıt Güncelle</h3>
+}
 
-
+}
 
 
   render() {
@@ -96,7 +130,9 @@ export default class CreateWantedPeopleComponent extends Component {
           <div className='container'>
               <div className='row'>
                   <div className='card col-md-6 offset-md-3 offset-md-3'>
-                      <h3 className='text-center'>Kayıt Ekle</h3>
+                     {
+                         this.getTitle()
+                     }
                       <div className='card-body'>
                           <form>
                               <div className='form-group'>
@@ -140,7 +176,7 @@ export default class CreateWantedPeopleComponent extends Component {
                                   value={this.state.wantedImage} onChange={this.changeImageHandler}/>
                               </div>
 
-                              <button className='btn btn-success' onClick= {this.saveWantedPeople}>Kaydet</button>
+                              <button className='btn btn-success' onClick= {this.saveOrUpdateWantedPeople}>Kaydet</button>
                               <button className='btn btn-danger' onClick= {this.cancel.bind(this)} style = {{marginLeft: "10px"}}>Kapat</button>
 
 

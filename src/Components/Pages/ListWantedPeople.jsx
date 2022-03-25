@@ -18,13 +18,11 @@ class ListWantedPeople extends Component {
     }
     this.addWantedPeople=this.addWantedPeople.bind(this);
     this.editWantedPeople=this.editWantedPeople.bind(this);
+    this.deleteWantedPeople= this.deleteWantedPeople.bind(this);
     
 }
     editWantedPeople(id) {
-        this.props.history.push(`/UpdateWantedPeople/${id}`);
-
-
-
+        this.props.history.push(`/AddWantedPeople/${id}`);
 
     }
 
@@ -33,14 +31,27 @@ class ListWantedPeople extends Component {
             this.setState({wantedPeople:res.data});
             
         });
-}
-  addWantedPeople() {
+    }
+    
+    addWantedPeople() {
 
-    this.props.history.push('/AddWantedPeople');
+        this.props.history.push('/AddWantedPeople/_add');
+    }
+
+    deleteWantedPeople(id) {
+      //rest api
+      WantedPeopleService.deleteWantedPeople(id).then(res => {
+          this.setState({wantedPeople: this.state.wantedPeople.filter(wantedPeople => wantedPeople.id !== id)})
 
 
+      });
 
-  }
+
+    } 
+
+  
+
+ 
 
 
    render() {
@@ -87,6 +98,7 @@ class ListWantedPeople extends Component {
 
                                         <td>
                                             <button onClick={ () => this.editWantedPeople(wantedPeople.id)} className="btn btn-info">Güncelle</button>
+                                            <button style = {{margin:'10px'}}onClick={ () => this.deleteWantedPeople(wantedPeople.id)} className="btn btn-danger">Sil</button>
                                         </td>
                                     </tr>
                                     
