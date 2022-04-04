@@ -14,6 +14,7 @@ import UpdateWantedPeopleComponent from "./Components/Pages/UpdateWantedPeopleCo
 import ViewWantedPeopleComponent from "./Components/ViewWantedPeopleComponent";
 
 
+
 function App(Component) {
  
   return (
@@ -45,6 +46,7 @@ function App(Component) {
     <Route path="/WantedPeopleList" component={ListWantedPeople}/>
     <Route path="/AddWantedPeople/:id" component={CreateWantedPeopleComponent}/>
     <Route path="/ViewWantedPeople/:id" component={ViewWantedPeopleComponent}/>
+   
  
     
     
