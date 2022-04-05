@@ -137,42 +137,42 @@ getTitle() {
                       <div className='card-body'>
                           <form>
                               <div className='form-group'>
-                                  <label>First Name:</label>
+                                  <label>Şahıs İsmi:</label>
                                   <input placeholder='First Name' name="firstName" className='form-control'
                                   value={this.state.firstName} onChange={this.changeFirstNameHandler}/>
                               </div>
                               <div className='form-group'>
-                                  <label>Last Name:</label>
+                                  <label>Şahıs Soy İsmi:</label>
                                   <input placeholder='Last Name' name="lastName" className='form-control'
                                   value={this.state.lastName} onChange={this.changeLastNameHandler}/>
                               </div>
                               <div className='form-group'>
-                                  <label>Gender:</label>
+                                  <label>Cinsiyet:</label>
                                   <input placeholder='Gender' name="gender" className='form-control'
                                   value={this.state.gender} onChange={this.changeGenderHandler}/>
                               </div>
                               <div className='form-group'>
-                                  <label>Age:</label>
+                                  <label>Yaş:</label>
                                   <input placeholder='Age' name="age" className='form-control'
                                   value={this.state.age} onChange={this.changeAgeHandler}/>
                               </div>
                               <div className='form-group'>
-                                  <label>Upper Clothes Color:</label>
+                                  <label>Üst Kıyafet Rengi:</label>
                                   <input placeholder='Upper Clothes Color' name="upperClothesColor" className='form-control'
                                   value={this.state.upperClothesColor} onChange={this.changeUpClothesHandler}/>
                               </div>
                               <div className='form-group'>
-                                  <label>Lower Clothes Color:</label>
+                                  <label>Alt Kıyafet Rengi:</label>
                                   <input placeholder='Lower Clothes Color' name="lowerClothesColor" className='form-control'
                                   value={this.state.lowerClothesColor} onChange={this.changeLowClothesHandler}/>
                               </div>
                               <div className='form-group'>
-                                  <label>Lost Address:</label>
+                                  <label>Kayıp Adresi:</label>
                                   <input placeholder='Lost Address' name="lostAddress" className='form-control'
                                   value={this.state.lostAddress} onChange={this.changeLostAdHandler}/>
                               </div>
                               <div className='form-group'>
-                                  <label>Image:</label>
+                                  <label>Şahıs Resmi:</label>
                                   <input placeholder='Image' name="wantedImage" className='form-control'
                                   value={this.state.wantedImage} onChange={this.changeImageHandler}/>
                               </div>

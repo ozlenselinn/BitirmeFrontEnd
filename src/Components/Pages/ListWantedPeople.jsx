@@ -63,7 +63,7 @@ class ListWantedPeople extends Component {
    render() {
         return (
             <div>
-                <h2 className ="text-center">Aranan Şahıs Listesi</h2>
+                <h2 className ="text-center" style= {{marginTop: '20px 20px', paddingTop: '20px'}}>Aranan Şahıs Listesi</h2>
                 <div className='row'>
                     <button className='btn btn-primary' onClick = {this.addWantedPeople}>Kayıt Ekle</button>
 

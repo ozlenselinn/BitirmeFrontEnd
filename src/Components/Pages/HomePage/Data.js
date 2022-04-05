@@ -32,42 +32,5 @@ export const data = [
       image: "http://dummyimage.com/100x100.png/cc0000/ffffff",
       avatar: "https://robohash.org/voluptasquisaut.png?size=150x150&set=set1",
     },
-    {
-      id: 4,
-      first_name: "Coralie",
-      last_name: "Domenge",
-      email: "cdomenge3@eepurl.com",
-      gender: "Erkek",
-      ip_address: "195.92.89.100",
-      date: "2020-12-29T18:12:32Z",
-      image: "http://dummyimage.com/100x100.png/5fa2dd/ffffff",
-      avatar: "https://robohash.org/deseruntcumipsam.png?size=150x150&set=set1",
-    },
-    {
-      id: 5,
-      first_name: "Willamina",
-      last_name: "Kinson",
-      email: "wkinson4@wordpress.com",
-      gender: "Erkek",
-      ip_address: "44.157.239.254",
-      date: "2021-02-23T08:30:12Z",
-      image: "http://dummyimage.com/100x100.png/5fa2dd/ffffff",
-      avatar:
-        "https://robohash.org/repudiandaeauteaque.png?size=150x150&set=set1",
-    },
-    {
-      id: 6,
-      first_name: "Tildie",
-      last_name: "Rochester",
-      email: "trochester5@acquirethisname.com",
-      gender: "Kadın",
-      ip_address: "39.16.127.114",
-      date: "2020-09-25T03:58:47Z",
-      image: "http://dummyimage.com/100x100.png/ff4444/ffffff",
-      avatar:
-        "https://robohash.org/ipsamessevoluptatibus.png?size=150x150&set=set1",
-    },
-
-  
- 
+   
   ];

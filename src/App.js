@@ -12,6 +12,7 @@ import './App.css';
 import CreateWantedPeopleComponent from "./Components/CreateWantedPeopleComponent";
 import UpdateWantedPeopleComponent from "./Components/Pages/UpdateWantedPeopleComponent";
 import ViewWantedPeopleComponent from "./Components/ViewWantedPeopleComponent";
+import Navbarmenu from "./Components/Pages/LoginPage/NavbarMenu";
 
 
 
@@ -28,7 +29,7 @@ function App(Component) {
     <Route path="/" exact component={Login}/>
     <div className="container1">
       <div className ='containerback'>
-      <Navbar></Navbar>
+       <Navbarmenu></Navbarmenu>
       <FooterComponent></FooterComponent>
     
     <Route path="/Home" component={Home}/>
