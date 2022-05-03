@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import WantedPeopleService from './Pages/WantedPeopleService';
 
+
 class ViewWantedPeopleComponent extends Component {
+    
     constructor(props) {
         super(props)
         
@@ -27,6 +29,7 @@ class ViewWantedPeopleComponent extends Component {
 
 
     render() {
+        
         return (
             <div>
                 <div className= "card col-md-6 offset-md-3">
