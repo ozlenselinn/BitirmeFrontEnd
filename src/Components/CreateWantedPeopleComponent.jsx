@@ -173,7 +173,8 @@ getTitle() {
                               </div>
                               <div className='form-group'>
                                   <label>Şahıs Resmi:</label>
-                                  <input placeholder='Image' name="wantedImage" className='form-control'
+                                  <input type ="file" placeholder='Image' name="wantedImage" className='form-control'
+                                 
                                   value={this.state.wantedImage} onChange={this.changeImageHandler}/>
                               </div>
 

@@ -1,14 +1,29 @@
 
-import React from 'react'
+import React, {Component} from 'react'
 import { Grid,Paper, TextField, Button } from '@material-ui/core'
 import './LoginStyle.css';
+import { render } from '@testing-library/react';
 
-const Login=()=>{
+class Login extends Component{
 
+  constructor(props) {
+        
+    //we props to the React component
+    super(props)
+    
+    //this is state which is belongs to this component (ListEmployeeComponent)
+    this.state = {
+        //initialize an array
+      wantedPeople : []
+    } 
+    
+}
+  render() {
     const paperStyle={padding :20,height:'70vh',width:480, margin:"20px auto"}
   
     const btnstyle={margin:'8px 0'}
-    return(
+    
+  return(
       <div className = "loginPage">
         <Grid>
           <div className = "loginCard">
@@ -30,7 +45,10 @@ const Login=()=>{
             </div>
         </Grid>
         </div>
-    )
+    );
+     
+  }
+
 }
 
 export default Login;
