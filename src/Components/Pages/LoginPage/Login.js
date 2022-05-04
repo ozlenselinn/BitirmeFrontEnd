@@ -1,30 +1,48 @@
 
-import React, {Component} from 'react'
+import React, {useState} from 'react'
+import axios from 'axios';
 import { Grid,Paper, TextField, Button } from '@material-ui/core'
 import './LoginStyle.css';
-import { render } from '@testing-library/react';
 
-class Login extends Component{
 
-  constructor(props) {
-        
-    //we props to the React component
-    super(props)
+function Login() {
+
+  const [id, setId] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  async function handleSubmit(event)
+  {
+      event.preventDefault();
+  try
+      {
+       await axios.post("http://localhost:8080/users/register",
+      {
+      id: id,
+      username: username,
+      password: password,
+     
+      });
+        alert("User Registation Successfully");
+       // setId("");
+        setUsername("");
+        setPassword("");
     
-    //this is state which is belongs to this component (ListEmployeeComponent)
-    this.state = {
-        //initialize an array
-      wantedPeople : []
-    } 
-    
-}
-  render() {
-    const paperStyle={padding :20,height:'70vh',width:480, margin:"20px auto"}
+      
+      }
+  catch(err)
+      {
+        alert("User Registation Failed");
+      }
+ }
+
+ const paperStyle={padding :20,height:'70vh',width:480, margin:"20px auto"}
   
-    const btnstyle={margin:'8px 0'}
+ const btnstyle={margin:'8px 0'}
     
   return(
       <div className = "loginPage">
+      <form className="register-form" onSubmit={handleSubmit}>
         <Grid>
           <div className = "loginCard">
             <Paper elevation={10} style={paperStyle}>
@@ -34,9 +52,17 @@ class Login extends Component{
                 </Grid>
                 <div className='textFieldStyle'>
                   <div className='textFieldPer'>
-                <TextField label='Kullanıcı Adı' placeholder='Kullanıcı Adı Giriniz' fullWidth required/>
+                <TextField name = "username" label='Kullanıcı Adı' placeholder='Kullanıcı Adı Giriniz' fullWidth required onChange={(event) =>
+                {
+                    setUsername(event.target.value);      
+                }}/>
                 </div>
-                <TextField label='Şifre' placeholder='Şifre Giriniz' type='password' fullWidth required/>
+                <TextField  name = "password" label='Şifre' placeholder='Şifre Giriniz' type='password' fullWidth required
+                    onChange={(event) =>
+                {
+                    setPassword(event.target.value);      
+                }}  
+                />
                 </div>
               <div className='buttonStyle'>
                 <Button type='submit'  style={{color:'black', fontSize:'100%'}} fullWidth>Giriş</Button>
@@ -44,10 +70,11 @@ class Login extends Component{
             </Paper>
             </div>
         </Grid>
+        </form>
         </div>
     );
      
-  }
+  
 
 }
 
