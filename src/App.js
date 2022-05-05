@@ -13,6 +13,7 @@ import CreateWantedPeopleComponent from "./Components/CreateWantedPeopleComponen
 import UpdateWantedPeopleComponent from "./Components/Pages/UpdateWantedPeopleComponent";
 import ViewWantedPeopleComponent from "./Components/ViewWantedPeopleComponent";
 import Navbarmenu from "./Components/Pages/LoginPage/NavbarMenu";
+import Login2 from "./Components/Pages/LoginPage/Login2";
 
 
 
@@ -21,6 +22,7 @@ function App(Component) {
   return (
     
     <div>
+    <Login2></Login2>
      <Router basename="/">
   
     

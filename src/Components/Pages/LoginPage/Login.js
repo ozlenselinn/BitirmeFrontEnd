@@ -36,6 +36,32 @@ function Login() {
       }
  }
 
+ async function handleSubmit2(event)
+  {
+      event.preventDefault();
+  try
+      {
+       await axios.post("http://localhost:8080/users/login",
+      {
+      id: id,
+      username: username,
+      password: password,
+     
+      });
+        alert("User Login Successfully");
+       // setId("");
+        //setUsername("");
+        //setPassword("");
+    
+      
+      }
+  catch(err)
+      {
+        alert("User Login Failed");
+      }
+ }
+
+
  const paperStyle={padding :20,height:'70vh',width:480, margin:"20px auto"}
   
  const btnstyle={margin:'8px 0'}
@@ -65,11 +91,18 @@ function Login() {
                 />
                 </div>
               <div className='buttonStyle'>
-                <Button type='submit'  style={{color:'black', fontSize:'100%'}} fullWidth>Giriş</Button>
+                <Button type='submit'  style={{color:'black', fontSize:'100%'}} fullWidth>Kayıt Ol</Button>
                 </div>
+               
             </Paper>
             </div>
         </Grid>
+        </form>
+        <form className="login-form" onSubmit={handleSubmit2}>
+
+        <div className='buttonStyle'>
+                <Button type='submit'  style={{color:'black', fontSize:'100%'}} fullWidth>Giriş Yap</Button>
+                </div>
         </form>
         </div>
     );
