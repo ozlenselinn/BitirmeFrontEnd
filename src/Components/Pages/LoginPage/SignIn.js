@@ -36,7 +36,7 @@ export default function SignIn() {
     const [users, setUsers] = useState([])
     useEffect(() => {
       let userService = new UserService()
-      userService.getUsers().then(result => setUsers(result.data.data))
+      userService.getAllUsers().then(result => setUsers(result.data.data))
     }, [])
 
 
@@ -44,25 +44,25 @@ export default function SignIn() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
 
-    users.map((user) => {
-        if((user.email == data.get('email')) && (user.username == data.get('password'))){
+    users?.map((user) => {
+       console.log( user.username, user.password);
+        if((user.username == data.get('username')) && (user.password == data.get('password'))){
             control = true;
         }
     }
     )
-
-
-    if(control === true){
+  
+  if(control === true){
         console.log("GİRİŞ BAŞARILI ")
         control = false
     }else{
         console.log("GİRİŞ BAŞARISIZ ")
     }
 
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    // console.log({
+    //   username: data.get('username'),
+    //   password: data.get('password'),
+    // });
   };
 
   return (
@@ -87,10 +87,10 @@ export default function SignIn() {
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
+              id="username"
+              label="username"
+              name="username"
+              autoComplete="username"
               autoFocus
             />
             <TextField

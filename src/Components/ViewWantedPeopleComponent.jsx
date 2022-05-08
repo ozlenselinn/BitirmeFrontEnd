@@ -20,13 +20,8 @@ class ViewWantedPeopleComponent extends Component {
         WantedPeopleService.getWantedPeopleById(this.state.id).then(res => {
             this.setState({wantedPeople: res.data});
 
-
-        })
-
-
-
+   })
     }
-
 
     render() {
         
@@ -51,11 +46,7 @@ class ViewWantedPeopleComponent extends Component {
                          <label>Kayıp Adresi: </label>
                          <div>{ this.state.wantedPeople.lostAddress }</div>
                          
-
-
-
-                     </div>
-
+                           </div>
 
                  </div>
 

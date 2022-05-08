@@ -3,9 +3,6 @@ import {NavLink, Link} from 'react-router-dom';
 import {FiAlignRight,FiXCircle,FiChevronDown } from "react-icons/fi";
 import './NavbarStyle.css';
 
-
-
-
 const Navbarmenu = () => {
 
     const [isMenu, setisMenu] = useState(false);

@@ -29,12 +29,12 @@ function App(Component) {
     
     <Switch>
     
-    <Route path="/" exact component={Login}/>
+    <Route path="/" exact component={SignIn}/>
     <div className="container1">
       <div className ='containerback'>
        <Navbarmenu></Navbarmenu>
       <FooterComponent></FooterComponent>
-    
+  
     <Route path="/Home" component={Home}/>
 
     </div>
@@ -44,7 +44,7 @@ function App(Component) {
     <Route path="/WantedPeopleList" component={ListWantedPeople}/>
     <Route path="/AddWantedPeople/:id" component={CreateWantedPeopleComponent}/>
     <Route path="/ViewWantedPeople/:id" component={ViewWantedPeopleComponent}/>
-    <Route path="/deneme" component={SignIn}/>
+
    
     </div>
     </div>

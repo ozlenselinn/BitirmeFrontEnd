@@ -1,4 +1,3 @@
-
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import { Grid,Paper, TextField, Button } from '@material-ui/core'
@@ -21,50 +20,50 @@ export default function Login() {
     userService.getAllUsers().then(result => setUsers(result.data.data))
   }, [])
 
- async function handleSubmit(event)
-  {
-      event.preventDefault();
-  try
-      {
-       await axios.post("http://localhost:8080/users/register",
-      {
-     // id: id,
-      username: username,
-      password: password,
+//  async function handleSubmit(event)
+//   {
+//       event.preventDefault();
+//   try
+//       {
+//        await axios.post("http://localhost:8080/users/register",
+//       {
+//      // id: id,
+//       username: username,
+//       password: password,
      
-      });
-        alert("User Registation Successfully");
-       // setId("");
-        setUsername("");
-        setPassword("");
+//       });
+//         alert("User Registation Successfully");
+//        // setId("");
+//         setUsername("");
+//         setPassword("");
     
       
-      }
-  catch(err)
-      {
-        alert("User Registation Failed");
-      }
- }
+//       }
+//   catch(err)
+//       {
+//         alert("User Registation Failed");
+//       }
+//  }
 
 
- const handleSubmit2 = (event) => {
+ const handleSubmit = (event) => {
   event.preventDefault();
 
    const data = new FormData(event.currentTarget);
 
-  users.map((user) => {
+  users?.map((user) => {
       // if((user.username == username) && (user.password == password)){
       //     control = true;
       // }
 
-      //console.log(user.username);
+      console.log(user.username);
   }
   )
 
-  console.log({
-    username: data.get('username'),
-    password: data.get('password'),
-  });
+  // console.log({
+  //   username: data.get('username'),
+  //   password: data.get('password'),
+  // });
 }
 
 
@@ -97,19 +96,14 @@ export default function Login() {
                 />
                 </div>
               <div className='buttonStyle'>
-                <Button type='submit'  style={{color:'black', fontSize:'100%'}} fullWidth>Kayıt Ol</Button>
+                <Button type='submit'  style={{color:'black', fontSize:'100%'}} fullWidth>Giriş Yap</Button>
                 </div>
                
             </Paper>
             </div>
         </Grid>
         </form>
-        <form className="login-form2" onSubmit={handleSubmit2}>
-
-        <div className='buttonStyle'>
-                <Button type='submit'  style={{color:'black', fontSize:'100%'}} fullWidth>Giriş Yap</Button>
-                </div>
-        </form>
+        
         </div>
     );
      
