@@ -13,7 +13,8 @@ import CreateWantedPeopleComponent from "./Components/CreateWantedPeopleComponen
 import UpdateWantedPeopleComponent from "./Components/Pages/UpdateWantedPeopleComponent";
 import ViewWantedPeopleComponent from "./Components/ViewWantedPeopleComponent";
 import Navbarmenu from "./Components/Pages/LoginPage/NavbarMenu";
-import Login2 from "./Components/Pages/LoginPage/Login2";
+import SignIn from "./Components/Pages/LoginPage/SignIn";
+
 
 
 
@@ -22,7 +23,7 @@ function App(Component) {
   return (
     
     <div>
-    <Login2></Login2>
+  
      <Router basename="/">
   
     
@@ -35,32 +36,19 @@ function App(Component) {
       <FooterComponent></FooterComponent>
     
     <Route path="/Home" component={Home}/>
+
     </div>
     
+     <div className="container2" >
     
-    
-    
-   
-  
-    <div className="container2" >
-    
-  
-      
     <Route path="/WantedPeopleList" component={ListWantedPeople}/>
     <Route path="/AddWantedPeople/:id" component={CreateWantedPeopleComponent}/>
     <Route path="/ViewWantedPeople/:id" component={ViewWantedPeopleComponent}/>
+    <Route path="/deneme" component={SignIn}/>
    
- 
-    
-    
     </div>
     </div>
-  
-    
-
- 
-      
-    </Switch>
+   </Switch>
     </Router>
      </div>
 
@@ -68,3 +56,6 @@ function App(Component) {
 }
 
 export default App;
+ 
+    
+    

@@ -1,24 +1,34 @@
 
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import { Grid,Paper, TextField, Button } from '@material-ui/core'
+import UserService from './UserService';
 import './LoginStyle.css';
 
 
-function Login() {
+
+export default function Login() {
+  
+  var control= false;
 
   const [id, setId] = useState("");
+  const [users, setUsers] = useState([])
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  async function handleSubmit(event)
+  useEffect(() => {
+    let userService = new UserService()
+    userService.getAllUsers().then(result => setUsers(result.data.data))
+  }, [])
+
+ async function handleSubmit(event)
   {
       event.preventDefault();
   try
       {
        await axios.post("http://localhost:8080/users/register",
       {
-      id: id,
+     // id: id,
       username: username,
       password: password,
      
@@ -36,30 +46,26 @@ function Login() {
       }
  }
 
- async function handleSubmit2(event)
-  {
-      event.preventDefault();
-  try
-      {
-       await axios.post("http://localhost:8080/users/login",
-      {
-      id: id,
-      username: username,
-      password: password,
-     
-      });
-        alert("User Login Successfully");
-       // setId("");
-        //setUsername("");
-        //setPassword("");
-    
-      
-      }
-  catch(err)
-      {
-        alert("User Login Failed");
-      }
- }
+
+ const handleSubmit2 = (event) => {
+  event.preventDefault();
+
+   const data = new FormData(event.currentTarget);
+
+  users.map((user) => {
+      // if((user.username == username) && (user.password == password)){
+      //     control = true;
+      // }
+
+      //console.log(user.username);
+  }
+  )
+
+  console.log({
+    username: data.get('username'),
+    password: data.get('password'),
+  });
+}
 
 
  const paperStyle={padding :20,height:'70vh',width:480, margin:"20px auto"}
@@ -98,7 +104,7 @@ function Login() {
             </div>
         </Grid>
         </form>
-        <form className="login-form" onSubmit={handleSubmit2}>
+        <form className="login-form2" onSubmit={handleSubmit2}>
 
         <div className='buttonStyle'>
                 <Button type='submit'  style={{color:'black', fontSize:'100%'}} fullWidth>Giriş Yap</Button>
@@ -111,4 +117,4 @@ function Login() {
 
 }
 
-export default Login;
+

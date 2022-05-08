@@ -1,12 +1,7 @@
-/*import axios from 'axios';
+import axios from "axios";
 
-const USERS_API_BASE_URL = 'http://localhost:8080/users/';
-
-class UserService{
-
+export default class UserService{
     getAllUsers(){
-        return axios.get(USERS_API_BASE_URL);
+        return axios.get("http://localhost:8080/users")
     }
 }
-
-export default new UserService(); */
