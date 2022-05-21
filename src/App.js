@@ -29,13 +29,13 @@ function App(Component) {
     
     <Switch>
     
-    <Route path="/" exact component={SignIn}/>
+    {/* <Route path="/" exact component={SignIn}/> */}
     <div className="container1">
       <div className ='containerback'>
        <Navbarmenu></Navbarmenu>
       <FooterComponent></FooterComponent>
   
-    <Route path="/Home" component={Home}/>
+    {/* <Route path="/Home" component={Home}/> */}
 
     </div>
     
